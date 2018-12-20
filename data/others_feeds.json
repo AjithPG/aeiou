@@ -1,0 +1,58 @@
+{
+	"others": [
+		{
+			"title": "others",
+			"icon": "group",
+			"color": "indigo",
+			"link": "projects",
+			"sub": [
+				{
+					"color": "orange",
+					"title": "Wallpapers",
+					"description": "Curated list of wallpapers",
+					"info": "View all",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "wallpaper",
+					"link": "wallpapers"
+				},
+				{
+					"color": "deep-purple",
+					"title": "Fuse Org",
+					"description": "Developers community",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "group",
+					"link": "fuseorg"
+				}
+			]
+		}
+	],
+	"similar": [
+		{
+			"title": "similar",
+			"icon": "star",
+			"color": "blue-grey",
+			"link": "projects",
+			"sub": [
+				{
+					"color": "blue",
+					"title": "Feedie",
+					"description": "Faculty feedback system",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "feedie"
+				},
+				{
+					"color": "light-blue",
+					"title": "Lvr",
+					"description": "Virtual and Augmented Reality for everyone!",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "lvr"
+				}
+			]
+		}
+	]
+}

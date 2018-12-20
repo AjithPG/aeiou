@@ -1,0 +1,257 @@
+{
+	"recent": [
+		{
+			"title": "Recommended for you",
+			"icon": "star",
+			"color": "orange",
+			"link": "blog",
+			"sub": [
+				{
+					"color": "purple",
+					"title": "Students",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "red",
+					"title": "Artist",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "pink",
+					"title": "Teachers",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "orange",
+					"title": "Doctors",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "cyan",
+					"title": "E-commerce",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "green",
+					"title": "Devs",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "yellow",
+					"title": "Creative",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "blue",
+					"title": "Navigate",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "teal",
+					"title": "Identify",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "indigo",
+					"title": "Measure",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				}
+			]
+		}
+	],
+	"popular": [
+		{
+			"title": "Discover",
+			"icon": "whatshot",
+			"color": "red",
+			"link": "blog",
+			"sub": [
+				{
+					"color": "deep-purple",
+					"title": "Fuse Org",
+					"description": "Developers community",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "group",
+					"link": "fuseorg"
+				},
+				{
+					"color": "cyan",
+					"title": "Collection",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "green",
+					"title": "Collection",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "yellow",
+					"title": "Collection",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "blue",
+					"title": "Collection",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "teal",
+					"title": "Collection",
+					"description": "Description",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				},
+				{
+					"color": "orange",
+					"title": "Wallpapers",
+					"description": "Curated list of wallpapers",
+					"info": "View all",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "wallpaper",
+					"link": "wallpapers"
+				},
+				{
+					"color": "grey",
+					"title": "Art",
+					"description": "Doodles and drawings",
+					"info": "View all",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "create",
+					"link": "art"
+				},
+				{
+					"color": "yellow",
+					"title": "Pineapple Notes",
+					"description": "A simple, clean note app",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "pineapplenotes"
+				},
+				{
+					"color": "black",
+					"title": "Shooter",
+					"description": "Shoot em down!",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "shooter"
+				}
+			]
+		}
+	],
+	"activity": [
+		{
+			"title": "Activity",
+			"icon": "work",
+			"color": "blue",
+			"link": "activity",
+			"sub": [
+				{
+					"color": "teal",
+					"title": "Konnect",
+					"description": "Intranet for NCERC",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "language",
+					"link": "konnect"
+				},
+				{
+					"color": "blue",
+					"title": "Feedie",
+					"description": "Faculty feedback system",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "feedie"
+				},
+				{
+					"color": "light-blue",
+					"title": "Lvr",
+					"description": "Virtual and Augmented Reality for everyone!",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "lvr"
+				},
+				{
+					"color": "pink",
+					"title": "ily",
+					"description": "Sharing is better than getting Likes",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "ily"
+				},
+				{
+					"color": "indigo",
+					"title": "AEIOU",
+					"description": "Augmented Reality platform to make education fun and interactive",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"icon": "arrow-forward",
+					"link": "aeiou"
+				}
+			]
+		}
+	]
+}
