@@ -4,13 +4,12 @@ import {
 } from '@polymer/polymer/polymer-element.js';
 import './shared-styles.js';
 import '@polymer/app-layout/app-grid/app-grid-style.js';
+import '@polymer/paper-input/paper-input.js';
 import '@polymer/paper-button/paper-button.js';
 import '@polymer/paper-spinner/paper-spinner-lite.js';
-import '@polymer/iron-image/iron-image.js';
-import '@fabricelements/skeleton-carousel/skeleton-carousel.js';
 //import '@google/model-viewer';
 
-class MyHome extends PolymerElement {
+class MyDiscover extends PolymerElement {
 	static get template() {
 		return html `
       <style include="app-grid-style">
@@ -52,6 +51,9 @@ class MyHome extends PolymerElement {
 					.list {
 						width: 80vw;
 					}
+					.item:nth-child(5n+3) {
+						@apply --app-grid-expandible-item;
+					}
 				}
 				@media all and (min-width: 961px) {
 					:host {
@@ -70,7 +72,7 @@ class MyHome extends PolymerElement {
       </style>
 			<paper-toast id="shareToast" text="URL copied!"></paper-toast>
 			<iron-media-query query="min-width: 641px" query-matches="{{wideLayout}}"></iron-media-query>
-			<iron-ajax auto url="../data/home_feeds.json" id="ajax0" loading="{{loading0}}" handle-as="json" last-error="{{error0}}" last-response="{{ajaxResponse0}}">
+			<iron-ajax auto url="../data/discover_feeds.json" id="ajax0" loading="{{loading0}}" handle-as="json" last-error="{{error0}}" last-response="{{ajaxResponse0}}">
 			</iron-ajax>
 			<template is="dom-if" if="{{loading0}}">
 				<div class$="[[getUIType(UI)]] actions flex-center-center" hidden$="[[!loading0]]">
@@ -84,42 +86,13 @@ class MyHome extends PolymerElement {
 					</div>
 				</template>
 			</template>
-			<template is="dom-repeat" items="[[ajaxResponse0.collections]]" as="collections">
-				<div class$="[[getUIType(UI)]] actions flex-justified">
-					<div class="title">
-						{{collections.title}}
-					</div>
-				</div>
-				<div class$="[[getUIType(UI)]] banner flexchild flex-vertical">
-					<skeleton-carousel dots loop auto duration="5000">
-						<template is="dom-repeat" items="[[collections.sub]]" as="sub">
-							<div class="item">
-								<div class="container" style="text-align: center;">
-									<div class="top">
-										<div class="title">{{sub.title}}</div>
-									</div>
-									<div class="flexchild flex-vertical" style="padding: 32px; border-left: 1px solid var(--light-text-color); border-right: 1px solid var(--light-text-color);">
-										<iron-image class="bg" preload fade sizing="contain" src="{{sub.img}}"  alt="{{sub.title}}"></iron-image>
-									</div>
-									<div class="bottom">
-										<div class="info">
-											<div class="flexchild">
-												<a href="{{sub.link}}"><paper-button aria-label="Info">{{sub.info}}</paper-button></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</template>
-					</skeleton-carousel>
-				</div>
-				<div class$="[[getUIType(UI)]] actions flex-center-center">
-					<a href="{{collections.link}}">
-						<paper-button class="primary" aria-label="View all">View all collections</paper-button>
-					</a>
-				</div>
-			</template>
 			<template is="dom-repeat" items="[[ajaxResponse0.discover]]" as="discover">
+				<div class$="[[getUIType(UI)]] content flex-justified">
+					<paper-input class="searchInput" value="{{filterVal}}" no-label-float>
+						<paper-icon-button icon="my-icons:search" slot="prefix"></paper-icon-button>
+						<paper-icon-button slot="suffix" on-click="clearInput" icon="my-icons:close" alt="clear" title="clear" hidden$="{{!filterVal}}"></paper-icon-button>
+					</paper-input>
+				</div>
 				<div class$="[[getUIType(UI)]] actions flex-justified">
 					<div class="title">
 						{{discover.title}}
@@ -158,7 +131,7 @@ class MyHome extends PolymerElement {
 					</div>
 				</div>
 				<div class$="[[getUIType(UI)]] app-grid" has-aspect-ratio>
-					<template is="dom-repeat" items="[[discover.sub]]" as="sub" sort="{{_sort(sortVal)}}">
+					<template is="dom-repeat" items="[[discover.sub]]" as="sub" filter="{{_filter(filterVal)}}" sort="{{_sort(sortVal)}}" rendered-item-count="{{renderedCount}}">
 						<div class="item">
 							<div class="container">
 								<div class="block top">
@@ -195,9 +168,14 @@ class MyHome extends PolymerElement {
 						</div>
 					</template>
 				</div>
+				<template is="dom-if" if="{{!renderedCount}}">
+					<div class$="[[getUIType(UI)]] content flex-justified">
+						Nothing found for "{{filterVal}}" - <a class="link" href="404">Try harder</a>
+					</div>
+				</template>
 				<div class$="[[getUIType(UI)]] actions flex-center-center">
 					<a href="{{discover.link}}">
-						<paper-button class="primary" aria-label="View all">Discover more</paper-button>
+						<paper-button class="primary" aria-label="View all">Load more</paper-button>
 					</a>
 				</div>
 			</template>
@@ -230,6 +208,15 @@ class MyHome extends PolymerElement {
 		window.removeEventListener('resize', this._updateGridStyles);
 	}
 
+	_filter(val) {
+		return function (sub) {
+			if (!val) return true;
+			if (!sub) return false;
+			return (sub.title && ~sub.title.toLowerCase().indexOf(val.toLowerCase())) ||
+				(sub.description && ~sub.description.toLowerCase().indexOf(val.toLowerCase()));
+		};
+	}
+
 	_sort(val) {
 		switch (val) {
 			case 'title':
@@ -238,6 +225,10 @@ class MyHome extends PolymerElement {
 					return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
 				};
 		}
+	}
+
+	clearInput() {
+		this.filterVal = null;
 	}
 
 	shareThis() {
@@ -267,4 +258,4 @@ class MyHome extends PolymerElement {
 	}
 }
 
-window.customElements.define('my-home', MyHome);
+window.customElements.define('my-discover', MyDiscover);

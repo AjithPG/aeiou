@@ -1,73 +1,9 @@
 {
-	"collections": [
-		{
-			"title": "Recommended for you",
-			"icon": "star",
-			"color": "orange",
-			"link": "collections",
-			"sub": [
-				{
-					"color": "green",
-					"title": "Alphabets",
-					"description": "Description",
-					"info": "Remix",
-					"img": "../images/assets/collections/marketing.svg",
-					"icon": "open-in-new",
-					"link": "https://liyasthomas.github.io/lvr/src/alphabets.html"
-				},
-				{
-					"color": "red",
-					"title": "Animals",
-					"description": "Description",
-					"info": "Remix",
-					"img": "../images/assets/collections/diamond.svg",
-					"icon": "open-in-new",
-					"link": "https://liyasthomas.github.io/lvr/src/animals.html"
-				},
-				{
-					"color": "pink",
-					"title": "Automobile",
-					"description": "Description",
-					"info": "Remix",
-					"img": "../images/assets/collections/gear.svg",
-					"icon": "open-in-new",
-					"link": "https://liyasthomas.github.io/lvr/src/automobile.html"
-				},
-				{
-					"color": "orange",
-					"title": "Biology",
-					"description": "Description",
-					"info": "Remix",
-					"img": "../images/assets/collections/ui.svg",
-					"icon": "open-in-new",
-					"link": "https://liyasthomas.github.io/lvr/src/biology.html"
-				},
-				{
-					"color": "cyan",
-					"title": "Chemistry",
-					"description": "Description",
-					"info": "Remix",
-					"img": "../images/assets/collections/share.svg",
-					"icon": "open-in-new",
-					"link": "https://liyasthomas.github.io/lvr/src/chemistry.html"
-				},
-				{
-					"color": "green",
-					"title": "Collection",
-					"description": "Description",
-					"info": "Remix",
-					"img": "../images/assets/collections/spark.svg",
-					"icon": "open-in-new",
-					"link": "https://liyasthomas.github.io/lvr/src/.html"
-				}
-			]
-		}
-	],
 	"discover": [
 		{
 			"title": "Discover",
-			"icon": "whatshot",
-			"color": "red",
+			"icon": "open-in-new",
+			"color": "light-blue",
 			"link": "discover",
 			"sub": [
 				{
@@ -181,39 +117,30 @@
 			]
 		}
 	],
-	"activity": [
+	"others": [
 		{
-			"title": "Activity",
-			"icon": "work",
-			"color": "blue",
-			"link": "activity",
+			"title": "Others",
+			"icon": "open-in-new",
+			"color": "indigo",
+			"link": "discover",
 			"sub": [
 				{
-					"color": "teal",
-					"title": "Konnect",
-					"description": "Intranet for NCERC",
-					"info": "Remix",
+					"color": "orange",
+					"title": "Wallpapers",
+					"description": "Curated list of wallpapers",
+					"info": "View all",
 					"img": "../images/assets/collections/puff.svg",
-					"icon": "open-in-new",
-					"link": "konnect"
+					"icon": "wallpaper",
+					"link": "wallpapers"
 				},
 				{
-					"color": "blue",
-					"title": "Feedie",
-					"description": "Faculty feedback system",
+					"color": "deep-purple",
+					"title": "Fuse Org",
+					"description": "Developers community",
 					"info": "Remix",
 					"img": "../images/assets/collections/puff.svg",
 					"icon": "open-in-new",
-					"link": "feedie"
-				},
-				{
-					"color": "light-blue",
-					"title": "Lvr",
-					"description": "Virtual and Augmented Reality for everyone!",
-					"info": "Remix",
-					"img": "../images/assets/collections/puff.svg",
-					"icon": "open-in-new",
-					"link": "lvr"
+					"link": "fuseorg"
 				}
 			]
 		}

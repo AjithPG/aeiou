@@ -1,83 +1,128 @@
 {
-	"web": [
+	"collections": [
 		{
-			"title": "web",
-			"icon": "language",
+			"title": "Collections",
+			"icon": "open-in-new",
 			"color": "light-blue",
-			"link": "web",
+			"link": "collections",
 			"sub": [
 				{
-					"color": "teal",
-					"title": "Konnect",
-					"description": "Intranet for NCERC",
-					"info": "Remix",
-					"img": "../images/assets/collections/puff.svg",
-					"icon": "language",
-					"link": "konnect"
-				},
-				{
-					"color": "indigo",
-					"title": "AEIOU",
-					"description": "Augmented Reality platform to make education fun and interactive",
-					"info": "Remix",
-					"img": "../images/assets/collections/puff.svg",
-					"icon": "arrow-forward",
-					"link": "aeiou"
-				},
-				{
-					"color": "light-blue",
-					"title": "Lvr",
-					"description": "Virtual and Augmented Reality for everyone!",
-					"info": "Remix",
-					"img": "../images/assets/collections/puff.svg",
-					"icon": "arrow-forward",
-					"link": "lvr"
-				},
-				{
-					"color": "blue-grey",
-					"title": "Material Things",
-					"description": "Reusable Material Design components",
-					"info": "Remix",
-					"img": "../images/assets/collections/puff.svg",
-					"icon": "arrow-forward",
-					"link": "materialthings"
-				},
-				{
 					"color": "blue",
-					"title": "Feedie",
-					"description": "Faculty feedback system",
+					"ccode": "#2979ff",
+					"title": "Movie",
+					"description": "Spiderman, Ironman",
 					"info": "Remix",
 					"img": "../images/assets/collections/puff.svg",
-					"icon": "arrow-forward",
-					"link": "feedie"
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/apple/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/movie.html"
 				},
 				{
-					"color": "grey",
-					"title": "Snake",
-					"description": "Snakes! Snakes everywhere!",
+					"color": "teal",
+					"ccode": "#1de9b6",
+					"title": "Geography",
+					"description": "Earth, Sun, Jupiter, Neptune, Moon, Gas planet",
 					"info": "Remix",
 					"img": "../images/assets/collections/puff.svg",
-					"icon": "arrow-forward",
-					"link": "snake"
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/pyrrole/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/geography.html"
+				},
+				{
+					"color": "purple",
+					"ccode": "#d500f9",
+					"title": "Alphabets",
+					"description": "A to Z",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/catt/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/alphabets.html"
+				},
+				{
+					"color": "green",
+					"ccode": "#00e676",
+					"title": "Electronics",
+					"description": "Motherboard, Fan",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/couchh/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/electronics.html"
 				},
 				{
 					"color": "pink",
-					"title": "ily",
-					"description": "Sharing is better than getting Likes",
+					"ccode": "#f50057",
+					"title": "Automobile",
+					"description": "Cars and bikes",
 					"info": "Remix",
 					"img": "../images/assets/collections/puff.svg",
-					"icon": "arrow-forward",
-					"link": "ily"
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/orange/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/automobile.html"
+				},
+				{
+					"color": "orange",
+					"ccode": "#ff9100",
+					"title": "Biology",
+					"description": "Skeleton, DNA, Cell, Thymine",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/dog/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/biology.html"
+				},
+				{
+					"color": "orange",
+					"ccode": "#ff9100",
+					"title": "Biology",
+					"description": "Skeleton, DNA, Cell, Thymine",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/ethane/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/biology.html"
+				},
+				{
+					"color": "orange",
+					"ccode": "#ff9100",
+					"title": "Biology",
+					"description": "Skeleton, DNA, Cell, Thymine",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/ironman/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/biology.html"
+				},
+				{
+					"color": "orange",
+					"ccode": "#ff9100",
+					"title": "Biology",
+					"description": "Skeleton, DNA, Cell, Thymine",
+					"info": "Remix",
+					"img": "../images/assets/collections/puff.svg",
+					"bg": "",
+					"model": "https://raw.githubusercontent.com/liyasthomas/lvr/master/assets/gltf/umbrella/scene.gltf",
+					"icon": "open-in-new",
+					"link": "https://liyasthomas.github.io/lvr/src/biology.html"
 				}
 			]
 		}
 	],
-	"others": [
+	"discover": [
 		{
-			"title": "others",
-			"icon": "group",
+			"title": "Discover",
+			"icon": "open-in-new",
 			"color": "indigo",
-			"link": "others",
+			"link": "discover",
 			"sub": [
 				{
 					"color": "orange",
@@ -94,7 +139,7 @@
 					"description": "Developers community",
 					"info": "Remix",
 					"img": "../images/assets/collections/puff.svg",
-					"icon": "group",
+					"icon": "open-in-new",
 					"link": "fuseorg"
 				}
 			]

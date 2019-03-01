@@ -13,6 +13,9 @@
 		"test:integration": "polymer build # test that psk builds without error with the CLI"
 	},
 	"dependencies": {
+		"@fabricelements/skeleton-carousel": "^3.0.2",
+		"@google/model-viewer": "0.0.7",
+		"@kuscamara/code-sample": "^3.0.2",
 		"@polymer/app-layout": "^3.0.2",
 		"@polymer/app-route": "^3.0.2",
 		"@polymer/iron-ajax": "^3.0.1",
@@ -28,12 +31,15 @@
 		"@polymer/iron-pages": "^3.0.1",
 		"@polymer/iron-scroll-threshold": "^3.0.1",
 		"@polymer/iron-selector": "^3.0.1",
+		"@polymer/iron-validator-behavior": "^3.0.1",
 		"@polymer/paper-button": "^3.0.1",
+		"@polymer/paper-checkbox": "^3.1.0",
 		"@polymer/paper-dialog": "^3.0.1",
 		"@polymer/paper-dialog-scrollable": "^3.0.1",
 		"@polymer/paper-dropdown-menu": "^3.0.1",
 		"@polymer/paper-fab": "^3.0.1",
-		"@polymer/paper-icon-button": "^3.0.1",
+		"@polymer/paper-icon-button": "^3.0.2",
+		"@polymer/paper-input": "^3.0.1",
 		"@polymer/paper-item": "^3.0.1",
 		"@polymer/paper-listbox": "^3.0.1",
 		"@polymer/paper-menu-button": "^3.0.1",
@@ -41,15 +47,16 @@
 		"@polymer/paper-spinner": "^3.0.1",
 		"@polymer/paper-tabs": "^3.0.1",
 		"@polymer/paper-toast": "^3.0.1",
+		"@polymer/paper-toggle-button": "^3.0.1",
 		"@polymer/paper-tooltip": "^3.0.1",
 		"@polymer/polymer": "^3.1.0",
-		"@webcomponents/webcomponentsjs": "^2.2.1",
+		"@webcomponents/webcomponentsjs": "^2.2.7",
 		"web-animations-js": "^2.3.1"
 	},
 	"devDependencies": {
 		"growl": "^1.10.5",
 		"lodash": "^4.17.11",
-		"polymer-cli": "^1.9.3",
+		"polymer-cli": "^1.9.6",
 		"wct-browser-legacy": "^1.0.2"
 	},
 	"engines": {

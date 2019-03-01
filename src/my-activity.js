@@ -4,6 +4,10 @@ import {
 } from '@polymer/polymer/polymer-element.js';
 import './shared-styles.js';
 import '@polymer/app-layout/app-grid/app-grid-style.js';
+import '@polymer/paper-input/paper-input.js';
+import '@polymer/paper-button/paper-button.js';
+import '@polymer/paper-spinner/paper-spinner-lite.js';
+//import '@google/model-viewer';
 
 class MyActivity extends PolymerElement {
 	static get template() {
@@ -19,7 +23,7 @@ class MyActivity extends PolymerElement {
 					:host {
 						--app-grid-columns: 1;
 						--app-grid-gutter: 16px;
-						--app-grid-item-height: 90vw;
+						--app-grid-item-height: 110vw;
 						--app-grid-expandible-item-columns: 1;
 					}
 					.list {
@@ -30,7 +34,7 @@ class MyActivity extends PolymerElement {
 					:host {
 						--app-grid-columns: 1;
 						--app-grid-gutter: 16px;
-						--app-grid-item-height: 80vw;
+						--app-grid-item-height: 100vw;
 						--app-grid-expandible-item-columns: 1;
 					}
 					.list {
@@ -41,7 +45,7 @@ class MyActivity extends PolymerElement {
 					:host {
 						--app-grid-columns: 2;
 						--app-grid-gutter: 32px;
-						--app-grid-item-height: 40vw;
+						--app-grid-item-height: 60vw;
 						--app-grid-expandible-item-columns: 2;
 					}
 					.list {
@@ -53,72 +57,31 @@ class MyActivity extends PolymerElement {
 				}
 				@media all and (min-width: 961px) {
 					:host {
-						--app-grid-columns: 4;
+						--app-grid-columns: 3;
 						--app-grid-gutter: 32px;
-						--app-grid-item-height: 25vw;
-						--app-grid-expandible-item-columns: 2;
+						--app-grid-item-height: 30vw;
+						--app-grid-expandible-item-columns: 3;
 					}
 					.list {
-						width: 60vw;
-					}
-					.item:nth-child(5n+1) {
-						@apply --app-grid-expandible-item;
-					}
-					.item:nth-child(5n+2) {
-						@apply --app-grid-expandible-item;
-					}
-					.item:nth-child(5n+4) {
-						@apply --app-grid-expandible-item;
+						width: 50vw;
 					}
 				}
+				paper-icon-button[active] {
+					color: var(--accent-color);
+				}
+				paper-toast.delete {
+					--paper-toast-background-color: red;
+					--paper-toast-color: white;
+				}
       </style>
+			<paper-toast id="shareToast" text="URL copied!"></paper-toast>
+			<paper-toast id="deleteToast" class="delete" duration="0" text="Delete scene?">
+				<div>
+					<paper-icon-button icon="my-icons:done" aria-label="Delete" on-click="deleteThis"></paper-icon-button>
+					<paper-icon-button icon="my-icons:close" aria-label="Cancel" on-click="deleteThis"></paper-icon-button>
+				</div>
+			</paper-toast>
 			<iron-media-query query="min-width: 641px" query-matches="{{wideLayout}}"></iron-media-query>
-			<div class="banner flexchild flex-vertical">
-				<iron-image class="bg" preload fade sizing="contain" src="../images/assets/activity/banner.svg"  alt="Banner"></iron-image>
-			</div>
-			<div class$="[[getUIType(UI)]] content">
-				<div class="title">
-					<iron-icon class="deep-orange-fg big" icon="my-icons:face"></iron-icon>activity me
-				</div>
-				<div class="description">
-					hi, my name is Liyas Thomas, i'm a designer, developer, and an entrepreneur.
-				</div>
-				<p>I'm a front end web designer/developer and 3D visualiser, skilled in HTML, CSS and CMS integration. I create clean, professional, functional websites.</p>
-				<p>I've been designing websites professionally for over six years. And still loves every second of it.</p>
-				<p>
-					<a href="mailto:liyascthomas@gmail.com?&subject=Hello Liyas!&body=Hi,"><paper-button class="primary" aria-label="Say hello!">Say hello!<iron-icon icon="my-icons:mail-outline"></iron-icon></paper-button></a>
-				</p>
-				<p>At first I intended to be an artist and started creating art works.</p>
-				<p>In high school, I was that kid that seemed to never be paying attention. Seemingly in my own world of doodles and drawings. I've had a pencil in my hand since I was in diapers. Things never change... I'm no longer in diapers though.</p>
-				<p>
-					<a href="mailto:liyascthomas@gmail.com?&subject=Hello Liyas!&body=Hi,"><paper-button class="primary" aria-label="Hire me">Hire me<iron-icon icon="my-icons:alternate-email"></iron-icon></paper-button></a>
-					<a href="collections"><paper-button class="primary" aria-label="My collections">My collections<iron-icon icon="my-icons:lightbulb-outline"></iron-icon></paper-button></a>
-				</p>
-			</div>
-			<div class$="[[getUIType(UI)]] content">
-				<div class="title">
-					<iron-icon class="orange-fg big" icon="my-icons:local-cafe"></iron-icon>buy me a coffee!
-				</div>
-				<div class="description">
-					appreciate my works by making a donation.
-				</div>
-				<p>
-					<a href="https://paypal.me/liyascthomas" target="_blank" rel="noopener"><paper-button class="primary" aria-label="PayPal">PayPal<iron-icon src="../images/assets/social/paypal.svg"></iron-icon></paper-button></a>
-				</p>
-			</div>
-			<div class$="[[getUIType(UI)]] content">
-				<div class="title">
-					<iron-icon class="red-fg big" icon="my-icons:favorite"></iron-icon>open source collections
-				</div>
-				<div class="description">
-					open sourcing our collections, or part of it, can help inspire other coders.
-				</div>
-				<p>
-					<a href="collections"><paper-button class="primary" aria-label="My collections">My collections<iron-icon icon="my-icons:lightbulb-outline"></iron-icon></paper-button></a>
-					<a href="https://dribbble.com/liyasthomas"><paper-button class="primary" aria-label="Dribbble">Dribbble<iron-icon src="../images/assets/social/dribbble.svg"></iron-icon></paper-button></a>
-					<a href="https://github.com/liyasthomas"><paper-button class="primary" aria-label="GitHub">GitHub<iron-icon src="../images/assets/social/github.svg"></iron-icon></paper-button></a>
-				</p>
-			</div>
 			<iron-ajax auto url="../data/activity_feeds.json" id="ajax0" loading="{{loading0}}" handle-as="json" last-error="{{error0}}" last-response="{{ajaxResponse0}}">
 			</iron-ajax>
 			<template is="dom-if" if="{{loading0}}">
@@ -129,63 +92,86 @@ class MyActivity extends PolymerElement {
 			<template is="dom-if" if="{{error0}}">
 				<template is="dom-if" if="{{!loading0}}">
 					<div class$="[[getUIType(UI)]] error">
-						<paper-button on-click="tryAgain" aria-label="Try again">Try again<iron-icon icon="my-icons:refresh"></iron-icon></paper-button>
+						<paper-button on-click="tryAgain" aria-label="Try again">Try again</paper-button>
 					</div>
 				</template>
 			</template>
-			<template is="dom-repeat" items="[[ajaxResponse0.social]]" as="social">
-				<div class$="[[getUIType(UI)]] content">
-					<div class="title">
-						<iron-icon class$="[[_computeFgClass(social.color)]] big" icon="my-icons:{{social.icon}}"></iron-icon>{{social.title}}
-					</div>
-					<div class="description">
-						follow me on
-					</div>
-					<p>
-						<template is="dom-repeat" items="[[social.sub]]" as="sub">
-							<a href="{{sub.link}}"><paper-icon-button src="../images/assets/social/{{sub.icon}}.svg" aria-label="Icon"></paper-icon-button></a>
-						</template>
-					</p>
-					<p><a href="https://🏹.to/👦💻">🏹.to/👦💻</a></p>
+			<template is="dom-repeat" items="[[ajaxResponse0.activity]]" as="activity">
+				<div class$="[[getUIType(UI)]] content flex-justified">
+					<paper-input class="searchInput" value="{{filterVal}}" no-label-float>
+						<paper-icon-button icon="my-icons:search" slot="prefix"></paper-icon-button>
+						<paper-icon-button slot="suffix" on-click="clearInput" icon="my-icons:close" alt="clear" title="clear" hidden$="{{!filterVal}}"></paper-icon-button>
+					</paper-input>
 				</div>
-				<div class$="[[getUIType(UI)]] actions flex-center-center">
-					<a href="{{social.link}}">
-						<paper-button class$="[[_computeBgClass(social.color)]]" aria-label="View all">View blog<iron-icon icon="my-icons:chevron-right"></iron-icon></paper-button>
-					</a>
-				</div>
-			</template>
-			<template is="dom-repeat" items="[[ajaxResponse0.gallery]]" as="gallery">
 				<div class$="[[getUIType(UI)]] actions flex-justified">
 					<div class="title">
-					<iron-icon class$="[[_computeFgClass(gallery.color)]] big" icon="my-icons:{{gallery.icon}}"></iron-icon>{{gallery.title}}
+						{{activity.title}}
 					</div>
-					<paper-icon-button
-							hidden$="{{!wideLayout}}"
-							toggles
-							active="{{UI}}"
-							icon$="my-icons:[[getUIIcon(UI)]]">
-					</paper-icon-button>
+					<div>
+						<paper-icon-button
+								id="controls"
+								toggles
+								active="{{controls}}"
+								icon="my-icons:pan-tool">
+						</paper-icon-button>
+						<paper-tooltip for="controls" position="top" animation-delay="0">Toggle controls</paper-tooltip>
+						<paper-icon-button
+								id="rotate"
+								toggles
+								active="{{rotate}}"
+								icon="my-icons:360">
+						</paper-icon-button>
+						<paper-tooltip for="rotate" position="top" animation-delay="0">Toggle rotation</paper-tooltip>
+						<paper-icon-button
+								id="ui"
+								hidden$="{{!wideLayout}}"
+								toggles
+								active="{{UI}}"
+								icon$="my-icons:[[getUIIcon(UI)]]">
+						</paper-icon-button>
+						<paper-tooltip for="ui" position="top" animation-delay="0">Toggle grid / list</paper-tooltip>
+						<paper-menu-button id="sort" horizontal-align="right">
+							<paper-icon-button icon="my-icons:sort" slot="dropdown-trigger"></paper-icon-button>
+							<paper-listbox slot="dropdown-content" class="listbox" attr-for-selected="name" selected="{{sortVal}}">
+								<paper-icon-item name="none"><iron-icon icon="my-icons:date-range" slot="item-icon"></iron-icon>Date<paper-ripple></paper-ripple></paper-icon-item>
+								<paper-icon-item name="title"><iron-icon icon="my-icons:sort-by-alpha" slot="item-icon"></iron-icon>Alphabet<paper-ripple></paper-ripple></paper-icon-item>
+							</paper-listbox>
+						</paper-menu-button>
+						<paper-tooltip for="sort" position="top" animation-delay="0">Sort</paper-tooltip>
+					</div>
 				</div>
 				<div class$="[[getUIType(UI)]] app-grid" has-aspect-ratio>
-					<template is="dom-repeat" items="[[gallery.sub]]" as="sub">
+					<template is="dom-repeat" items="[[activity.sub]]" as="sub" filter="{{_filter(filterVal)}}" sort="{{_sort(sortVal)}}" rendered-item-count="{{renderedCount}}">
 						<div class="item">
 							<div class="container">
 								<div class="block top">
-									<div class$="[[_computeFgClass(sub.color)]] title">{{sub.title}}</div>
+									<div class="title">{{sub.title}}</div>
 								</div>
 								<div class="block mid">
 									<div class="description">{{sub.description}}</div>
 								</div>
 								<div class="flexchild flex-vertical">
-									<iron-image class="bg" preload fade sizing="cover" src="{{sub.img}}"  alt="{{sub.title}}"></iron-image>
+									<model-viewer src="{{sub.model}}"
+																alt="{{sub.title}}"
+																controls$="{{controls}}"
+																auto-rotate$="{{rotate}}"
+																background-image="{{sub.bg}}"
+																background-color="#eee"
+																reveal-when-loaded
+																preload
+																poster="{{sub.img}}">
+									</model-viewer>
 								</div>
-								<div class$="[[_computeFgClass(sub.color)]] block bottom">
+								<div class="block bottom">
 									<div class="info">
 										<div class="flexchild">
 											<a href="{{sub.link}}"><paper-button aria-label="Info">{{sub.info}}</paper-button></a>
 										</div>
 										<div>
-											<a href="{{sub.link}}"><paper-icon-button src="../images/assets/social/{{sub.icon}}.svg" aria-label="Icon">{{sub.info}}</paper-icon-button></a>
+											<paper-icon-button icon="my-icons:delete" aria-label="Delete" on-click="deleteThis"></paper-icon-button>
+											<paper-icon-button icon="my-icons:share" aria-label="Share" on-click="shareThis"></paper-icon-button>
+											<paper-icon-button icon="my-icons:favorite" aria-label="Like"></paper-icon-button>
+											<a href="{{sub.link}}"><paper-icon-button icon="my-icons:{{sub.icon}}" aria-label="Icon"></paper-icon-button></a>
 										</div>
 									</div>
 								</div>
@@ -193,13 +179,33 @@ class MyActivity extends PolymerElement {
 						</div>
 					</template>
 				</div>
+				<template is="dom-if" if="{{!renderedCount}}">
+					<div class$="[[getUIType(UI)]] content flex-justified">
+						Nothing found for "{{filterVal}}" - <a class="link" href="404">Try harder</a>
+					</div>
+				</template>
 				<div class$="[[getUIType(UI)]] actions flex-center-center">
-					<a href="{{gallery.link}}">
-						<paper-button class$="[[_computeBgClass(gallery.color)]]" aria-label="View all">View blog<iron-icon icon="my-icons:chevron-right"></iron-icon></paper-button>
+					<a href="{{activity.link}}">
+						<paper-button class="primary" aria-label="View all">Load more</paper-button>
 					</a>
 				</div>
 			</template>
     `;
+	}
+
+	static get properties() {
+		return {
+			sortVal: {
+				type: String,
+				value: "none",
+				reflectToAttribute: true
+			},
+			controls: {
+				type: Boolean,
+				value: true,
+				reflectToAttribute: true
+			}
+		};
 	}
 
 	attached() {
@@ -213,12 +219,45 @@ class MyActivity extends PolymerElement {
 		window.removeEventListener('resize', this._updateGridStyles);
 	}
 
+	_filter(val) {
+		return function (sub) {
+			if (!val) return true;
+			if (!sub) return false;
+			return (sub.title && ~sub.title.toLowerCase().indexOf(val.toLowerCase())) ||
+				(sub.description && ~sub.description.toLowerCase().indexOf(val.toLowerCase()));
+		};
+	}
+
+	_sort(val) {
+		switch (val) {
+			case 'title':
+				return function (a, b) {
+					if (a.title.toLowerCase() === b.title.toLowerCase()) return 0;
+					return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
+				};
+		}
+	}
+
+	clearInput() {
+		this.filterVal = null;
+	}
+
+	shareThis() {
+		this.$.shareToast.toggle();
+		//		this.$.input.select();
+		//		document.execCommand('copy');
+	}
+
+	deleteThis() {
+		this.$.deleteToast.toggle();
+	}
+
 	tryAgain() {
 		this.$.ajax0.generateRequest();
 	}
 
 	getUIType(UI) {
-		return UI ? 'grid' : 'list';
+		return UI ? 'list' : 'grid';
 	}
 
 	getUIIcon(icon) {
